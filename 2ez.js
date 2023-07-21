@@ -39,6 +39,7 @@ function GenerateCards() {
         <div class="back"></div>
         `;
     cardElement.addEventListener("click", flipCard); // add this
+    cardElement.addEventListener("touchstart", flipCard);
     cardsContainer.appendChild(cardElement);
   }
 }
@@ -73,6 +74,8 @@ function unlockBoard() {
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
+  firstCard.removeEventListener("touchstart", flipCard);
+  secondCard.removeEventListener("touchstart", flipCard);
 
   unlockBoard();
 }
